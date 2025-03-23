@@ -84,6 +84,15 @@ arr.pop();
 arr.splice(1,0,{ id: "48", name: "Barry", occupation: "Runner", age: "25" });
 arr.push({id: "7", name: "Bilbo", occupation: "None", age: "111" });
 
+
+let sumAge = 0
+for(i=0; i<arr.length; i++){
+    sumAge += Number (arr[i]['age']);
+
+}
+let avgAge = sumAge / arr.length
+console.log(`Average age is: ` + avgAge)
+
 // console.log(arr)
 
 // Part 5
