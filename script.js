@@ -84,4 +84,18 @@ arr.pop();
 arr.splice(1,0,{ id: "48", name: "Barry", occupation: "Runner", age: "25" });
 arr.push({id: "7", name: "Bilbo", occupation: "None", age: "111" });
 
-console.log(arr)
+// console.log(arr)
+
+// Part 5
+
+
+let csv = ``;
+csv += keys.join(`,`);
+csv += '\n';
+for(i=0; i<arr.length; i++){
+  let temp = Object.values(arr[i]).join(`,`);
+  temp += `\n`;
+  csv += temp
+}
+
+console.log(csv)
