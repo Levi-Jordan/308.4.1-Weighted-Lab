@@ -47,16 +47,33 @@
 // Instead of hard-coding four columns per row, expand your code to accept any number of columns. This should be calculated dynamically based on the first row of data.
 // For example, if the first row of data (the headings) has eight entries, your program should create eight entries per row. You can safely assume that all rows that follow will contain the same number of entries per row.
 
+// let str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`; //Part 1 and 2
+
+// str = str.split(`\n`)
+
+// let arr = []
+
+// for (i=0; i<str.length; i++){
+
+//   let temp = str[i].split(`,`);
+//   arr.push(temp);
+// }
+
 let str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
 
-str = str.split(`\n`)
+str = str.split(`\n`);
 
-let arr = []
+let arr = [];
 
-for (i=0; i<str.length; i++){
+let keys = str[0].toLowerCase().split(`,`);
 
-  let temp = str[i].split(`,`);
-  arr.push(temp);
+for(i=1;i<str.length; i++){
+  let tempData = {};
+  let temp = str[i].split(`,`)
+  for(j=0;j<temp.length; j++) {
+    tempData[keys[j]] = temp[j];
+  }
+  arr.push(tempData);
 }
 
-console.log (arr)
+console.log(arr)
