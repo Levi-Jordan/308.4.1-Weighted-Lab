@@ -59,6 +59,8 @@
 //   arr.push(temp);
 // }
 
+// Part 3
+
 let str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
 
 str = str.split(`\n`);
@@ -75,5 +77,11 @@ for(i=1;i<str.length; i++){
   }
   arr.push(tempData);
 }
+//Part 4
+arr.sort();
+
+arr.pop();
+arr.splice(1,0,{ id: "48", name: "Barry", occupation: "Runner", age: "25" });
+arr.push({id: "7", name: "Bilbo", occupation: "None", age: "111" });
 
 console.log(arr)
